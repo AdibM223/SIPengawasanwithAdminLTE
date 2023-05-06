@@ -20,7 +20,6 @@
     <label for="exampleFormControlSelect1"> Kode Registrasi Badan Usaha</label>
     <input type="text" class="form-control"  name='nomorregis' value='{{$p->nomorregis}}' readonly>
   </div>
-  
   <div class="form-group">
     <label for="exampleFormControlInput1">Nama Badan Usaha</label>
     <input type="text" class="form-control"  name='nama_bu_regis' value='{{$p->nama_bu_regis}}' readonly>
@@ -44,17 +43,13 @@
  <input class="btn btn-primary" type="submit" value="Update">
  <a href='/regisbu'><button type="button" class="btn btn-danger" >Kembali</button></a>
 </div>
-
 </form>
-
 </div>
 </div>
 </div>
 </div>
  </body>
  <script>
-
-
   function kepatuhan()
   {
     var patuhnya=document.getElementById('kepatuhanku').value;
@@ -67,6 +62,5 @@
     document.getElementById('status_tahap5').value='Tidak Patuh';
   }
   }
-  
  </script>
 </html>

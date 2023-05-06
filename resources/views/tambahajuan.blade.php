@@ -15,7 +15,6 @@
     <div class="card-body">
 <form action='/ajuansertif/inputajuan' method='post' enctype="multipart/form-data">
 {{ csrf_field() }}
-
 <div class="form-group">
     <label for="exampleFormControlSelect1"> Kode Badan Usaha</label>
     <select class="form-control"  name='kode_bu'>
@@ -24,7 +23,6 @@
       @endforeach
     </select>
   </div>
-  
   <div class="form-group">
     <label for="exampleFormControlInput1">Nomor Surat</label>
     <input type="text" class="form-control"  name='no_surat'>
@@ -42,9 +40,7 @@
  <input class="btn btn-primary" type="submit" value="Tambah">
  <a href='/'><button type="button" class="btn btn-danger" >Kembali</button></a>
 </div>
-
 </form>
-
 </div>
 </div>
 </div>

@@ -20,7 +20,6 @@
     <label for="exampleFormControlSelect1"> Kode Registrasi Badan Usaha</label>
     <input type="text" class="form-control"  name='nomorregis' value='{{$p->nomorregis}}' readonly>
   </div>
-  
   <div class="form-group">
     <label for="exampleFormControlInput1">Nama Badan Usaha</label>
     <input type="text" class="form-control"  name='nama_bu_regis' value='{{$p->nama_bu_regis}}' readonly>
@@ -31,7 +30,6 @@
     <input type="date" class="form-control" name='tgl_surat_teguranI' required>
   </div>
   <div class="form-group">
-
     <label for="exampleFormControlSelect1">Kepatuhan</label>
     @foreach ($regisbu as $p)
     @if ($p->selisih7 > 7)
@@ -54,17 +52,13 @@
  <input class="btn btn-primary" type="submit" value="Update">
  <a href='/regisbu'><button type="button" class="btn btn-danger" >Kembali</button></a>
 </div>
-
 </form>
-
 </div>
 </div>
 </div>
 </div>
  </body>
  <script>
-
-
   function kepatuhan()
   {
     var patuhnya=document.getElementById('kepatuhanku').value;
@@ -77,6 +71,5 @@
     document.getElementById('status_tahap3').value='Tidak Patuh';
   }
   }
-  
  </script>
 </html>
