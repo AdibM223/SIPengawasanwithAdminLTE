@@ -34,11 +34,6 @@ class RegisController extends Controller
     	return view('regiscanvasing',['canvas' => $detailcanvasing,'noregis'=>$regiscanvas]);
     }
 
-
-
-
-
-
 	public function tambahregis()
     {
 		$masterregisbu = DB::table('masterregisbu')->get();
@@ -81,7 +76,7 @@ class RegisController extends Controller
 		'status_tahapcanvasing' => $request->statuscanvas,
 		'status_kepatuhan' => $request->statuskepatuhan
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambahkan data canvasing baru!');
 	}
 
 	public function inputupayalain(Request $request)
@@ -96,7 +91,7 @@ class RegisController extends Controller
 	DB::table('regisbu')->where('nomorregis',$request->nomorregis)->update([
 		'status_kepatuhan' => $request->hasil_upayalain,
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambahkan data upaya lain baru!');
 	}
 
 
@@ -112,13 +107,13 @@ class RegisController extends Controller
 		'status_tahap5' => 'Belum Terkonfirmasi',
 		'status_tahapupayalain' => 'Belum Terkonfirmasi',
 		'status_kepatuhan' => 'Belum Terkonfirmasi']);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil mereset ulang data registrasi!');
 	}
 
 	public function hapusupayalain($id)
 	{
 	DB::table('detailupaya')->where('nomorregis',$id)->delete();
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menghapus data upaya yang dipilih!');
 	}
 
 	public function registahap1( $id)
@@ -137,7 +132,7 @@ class RegisController extends Controller
 
 	public function registahap3( $id)
 	{
-	$regisbu = DB::table('regisbu')->where('nomorregis',$id)->get();
+	$regisbu = DB::table('selisihtahap2')->where('nomorregis',$id)->get();
 	return view('tahap3',['regisbu' => $regisbu]);
 	}
 
@@ -165,7 +160,7 @@ class RegisController extends Controller
 		'status_tahap1' => $request->status_tahap1,
 			'status_kepatuhan' => $request->kepatuhanku,
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambah data tahap 1!');
 	}
 
 	public function updatetahap2(Request $request)
@@ -178,7 +173,7 @@ class RegisController extends Controller
 		'status_tahap2' => $request->status_tahap2,
 		'status_kepatuhan' => $request->kepatuhanku,
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambah data tahap 2!');
 	}
 
 	public function updatetahap3(Request $request)
@@ -188,7 +183,7 @@ class RegisController extends Controller
 		'status_tahap3' => $request->status_tahap3,
 		'status_kepatuhan' => $request->kepatuhanku,
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambah data tahap 3!');
 	}
 
 	public function updatetahap4(Request $request)
@@ -198,7 +193,7 @@ class RegisController extends Controller
 		'status_tahap4' => $request->status_tahap4,
 		'status_kepatuhan' => $request->kepatuhanku,
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambah data tahap 4!');
 	}
 
 	public function updatetahap5(Request $request)
@@ -208,7 +203,7 @@ class RegisController extends Controller
 		'status_tahap5' => $request->status_tahap5,
 		'status_kepatuhan' => $request->kepatuhanku,
 	]);
-	return redirect('/regisbu');
+	return redirect('/regisbu')->withSuccess('Berhasil menambah data tahap 5!');
 	}
 
 

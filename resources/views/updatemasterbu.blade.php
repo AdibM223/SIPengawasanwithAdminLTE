@@ -55,7 +55,9 @@
 
   <div class="form-group">
     <label for="exampleFormControlInput1">Nama RO</label>
-    <input type="text" class="form-control" name='nama_RO_bu' value='{{$p->nama_RO_bu}}'>
+
+      <input type="text" class="form-control" name='nama_RO_bu' value='{{$p ->nama_RO_bu}}' readonly>
+    
   </div>  
   <div class="form-group">  <div class="form-group">
     <label for="exampleFormControlInput1">Titik Lokasi Badan Usaha</label>

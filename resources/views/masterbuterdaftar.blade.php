@@ -1,6 +1,7 @@
 @extends('layout.admin');
 
 @section('content')
+@include('sweetalert::alert')
 <style>
   .my-custom-scrollbar {
 position: relative;

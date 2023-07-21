@@ -59,7 +59,7 @@
     @endforeach
   </div>
  <div>
- <input type="text" class="form-control"  name='status_tahap2' id="status_tahap2">
+ <input type="hidden" class="form-control"  name='status_tahap2' id="status_tahap2">
  <br>
  <input class="btn btn-primary" type="submit" value="Update">
  <a href='/regisbu'><button type="button" class="btn btn-danger" >Kembali</button></a>

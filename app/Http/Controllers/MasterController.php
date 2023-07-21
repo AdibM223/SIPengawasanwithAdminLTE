@@ -18,8 +18,9 @@ class MasterController extends Controller
 
 	public function tambahregis()
     {
+		$namapeg = DB::table('datapeg')->get();
 		$masterregisbu = DB::table('masterregisbu')->latest('nomorregis')->first();
-    	return view('tambahmasterregis', ['masterregisbu' => $masterregisbu]);
+    	return view('tambahmasterregis', ['masterregisbu' => $masterregisbu, 'datapegku' => $namapeg]);
  
     }
 
@@ -34,7 +35,7 @@ class MasterController extends Controller
 		'notelp_bu_regis' => $request->notelp_bu_regis,
 		'PJ_regis' => $request->PJ_regis,
 		'notelp_PJ_regis' => $request->notelp_PJ_regis,
-		'nama_RO_regis' => $request->nama_RO_regis,
+		'nama_RO_regis' => $request->namapeg,
 		'jumlah_karyawan_regis' => $request->jumlah_karyawan_regis,
 		'longitude_regis' => $request->longitude_regis,
 		'latitude_regis' => $request->latitude_regis
@@ -54,7 +55,7 @@ class MasterController extends Controller
 		'status_kepatuhan' => $request->status_kepatuhan
 	]);
 
-	return redirect('/masterregis');
+	return redirect('/masterregis')->withSuccess('Berhasil menambahkan data baru!');
 	}
 
 	public function editregis( $id)
@@ -76,14 +77,14 @@ class MasterController extends Controller
 		'longitude_regis' => $request->longitude_regis,
 		'latitude_regis' => $request->latitude_regis
 	]);
-	return redirect('/masterregis');
+	return redirect('/masterregis')->withSuccess('Berhasil mengubah data!');
 	}
 
 	public function hapusregis($id)
 	{
 	DB::table('regisbu')->where('nomorregis',$id)->delete();	
 	DB::table('masterregisbu')->where('nomorregis',$id)->delete();
-	return redirect('/masterregis');
+	return redirect('/masterregis')->withSuccess('Berhasil menghapus data yang dipilih!');
 	}
 
 
@@ -98,7 +99,8 @@ class MasterController extends Controller
 	public function tambahbu()
     {
 		$wil = DB::table('wilker')->get();
-    	return view('tambahmasterbu', ['wil' => $wil]);
+		$namapeg = DB::table('datapeg')->get();
+    	return view('tambahmasterbu', ['wil' => $wil, 'datapegku' => $namapeg]);
  
     }
 
@@ -114,11 +116,11 @@ class MasterController extends Controller
 		'notelp_pimpinan' => $request->notelp_pimpinan,
 		'PIC' => $request->PIC,
 		'notelp_PIC' => $request->notelp_PIC,
-		'nama_RO_bu' => $request->nama_RO_bu,
+		'nama_RO_bu' => $request->namapeg,
 		'longitude_bu' => $request->longitude_bu,
 		'latitude_bu' => $request->latitude_bu
 	]);
-	return redirect('/masterbu');
+	return redirect('/masterbu')->withSuccess('Berhasil menambahkan data baru!');
 	}
 
 	public function editbu( $id)
@@ -140,13 +142,13 @@ class MasterController extends Controller
 		'longitude_bu' => $request->longitude_bu,
 		'latitude_bu' => $request->latitude_bu
 	]);
-	return redirect('/masterbu');
+	return redirect('/masterbu')->withSuccess('Berhasil mengubah data!');
 	}
 
 	public function hapusbu($id)
 	{
 	DB::table('masterbuterdaftar')->where('kode_bu',$id)->delete();
-	return redirect('/masterbu');
+	return redirect('/masterbu')->withSuccess('Berhasil menghapus data yang dipilih!');
 	}
 
 

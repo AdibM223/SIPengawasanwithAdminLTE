@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\REGISBU;
+use App\Models\Regisbu;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -16,7 +16,7 @@ class RegisExport implements FromCollection, WithHeadings, ShouldAutoSize, WithS
     */
     public function collection()
     {
-        return REGISBU::all();
+        return Regisbu::all();
     }
 
     public function headings():array

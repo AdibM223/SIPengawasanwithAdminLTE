@@ -225,7 +225,7 @@
   
 </style>
 <body class="align">
-
+@include('sweetalert::alert')
   <div class="grid">
   @if(session('message'))
             <div class="alert alert-success">

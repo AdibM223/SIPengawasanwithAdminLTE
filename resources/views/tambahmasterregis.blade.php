@@ -42,8 +42,12 @@
     <input type="text" class="form-control"  name='notelp_PJ_regis'>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Nama RO Registrasi</label>
-    <input type="text" class="form-control" name='nama_RO_regis' >
+  <label for="exampleFormControlInput1">Nama <i>Relationship Officer</i> (RO)</label>
+    <select name="namapeg" class="form-control">
+      @foreach ($datapegku as $p)
+      <option value="{{$p->namapeg}}">{{$p->nip}} - {{$p->namapeg}}</option>
+      @endforeach
+    </select>
   </div>  
 
   <div class="form-group">

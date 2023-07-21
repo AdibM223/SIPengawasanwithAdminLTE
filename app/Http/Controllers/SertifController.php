@@ -42,7 +42,7 @@ class SertifController extends Controller
 		'nama_file' => $fileName
 	]);
 
-	return redirect('/ajuansertif');
+	return redirect('/ajuansertif')->withSuccess('Berhasil menambahkan data pengajuan baru!');
 	}
 
 	public function editajuan( $id)
@@ -61,13 +61,13 @@ class SertifController extends Controller
 		'jumlah_ISAT' => $request->jumlah_ISAT,
 		'tanggal_diserahkan' => $request->tanggal_diserahkan,
 	]);
-	return redirect('/ajuansertif');
+	return redirect('/ajuansertif')->withSuccess('Berhasil memverifikasi data!');
 	}
 
 	public function deleteajuan($id)
 	{
 	DB::table('ajuansertif')->where('kode_bu',$id)->delete();
-	return redirect('/ajuansertif');
+	return redirect('/ajuansertif')->withSuccess('Berhasil menghapus data yang dipilih!');
 	}
 
 

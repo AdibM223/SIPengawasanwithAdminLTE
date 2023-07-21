@@ -49,7 +49,7 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Nama RO Registrasi</label>
-    <input type="text" class="form-control" name='nama_RO_regis' value='{{$p ->nama_RO_regis}}' >
+    <input type="text" class="form-control" name='nama_RO_regis' value='{{$p ->nama_RO_regis}}' readonly >
   </div>  
 
   <div class="form-group">

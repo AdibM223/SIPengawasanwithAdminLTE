@@ -101,7 +101,7 @@
                 <td height="50"></td>
             </tr>
             <tr>
-                <td>Nama RO</td>
+                <td>{{Auth::user()->name}}</td>
             </tr>
             </table >
     </td>

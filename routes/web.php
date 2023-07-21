@@ -6,7 +6,6 @@ use App\Http\Controllers\SertifController;
 use App\Http\Controllers\RegisController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdministratorController;
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +19,6 @@ use App\Http\Controllers\AdministratorController;
 */
 
 //REGISTER
-
-
-
-
-
-
 Auth::routes();
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard')->middleware('guestuser');
 Route::get('/useradmin', [AdministratorController::class, 'indexuser'])->name('useradmin')->middleware('administrator');
@@ -108,3 +101,19 @@ Route::get('/dashboard/tahap4', [HomeController::class, 'indexdsbregis4'])->midd
 Route::get('/dashboard/tahap5', [HomeController::class, 'indexdsbregis5'])->middleware('guestuser');
 Route::get('/dashboard/tahapcanvas', [HomeController::class, 'indexdsbregiscanvas'])->middleware('guestuser');
 Route::get('/dashboard/tahapupaya', [HomeController::class, 'indexdsbregisupaya'])->middleware('guestuser');
+
+//route wilker
+Route::get('/wilker', [AdministratorController::class, 'indexwilker'])->middleware('administrator');
+Route::get('/useradmin/wilker/tambahwilker', [AdministratorController::class, 'addwilker'])->middleware('administrator');
+Route::post('/useradmin/wilker/input', [AdministratorController::class, 'actionwilker'])->middleware('administrator');
+Route::get('/useradmin/wilker/updatewilker/{id}', [AdministratorController::class, 'wilkerupdate'])->middleware('administrator');
+Route::post('/useradmin/wilker/editwilker', [AdministratorController::class, 'actionwilkerupdate'])->middleware('administrator');
+Route::get('/useradmin/wilker/deletewilker/{id}', [AdministratorController::class, 'wilkerdelete'])->middleware('administrator');
+
+//route datapeg
+Route::get('/datapeg', [AdministratorController::class, 'indexdatapeg'])->middleware('administrator');
+Route::get('/useradmin/datapeg/tambahdatapeg', [AdministratorController::class, 'adddatapeg'])->middleware('administrator');
+Route::post('/useradmin/datapeg/input', [AdministratorController::class, 'actiondatapeg'])->middleware('administrator');
+Route::get('/useradmin/datapeg/updatedatapeg/{id}', [AdministratorController::class, 'datapegupdate'])->middleware('administrator');
+Route::post('/useradmin/datapeg/editdatapeg', [AdministratorController::class, 'actiondatapegupdate'])->middleware('administrator');
+Route::get('/useradmin/datapeg/deletedatapeg/{id}', [AdministratorController::class, 'datapegdelete'])->middleware('administrator');

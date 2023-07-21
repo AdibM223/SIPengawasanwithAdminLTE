@@ -7,7 +7,7 @@
         <div class="row mb-2">
           <!-- <div class="col-sm-6"> -->
 <table class="table  table-striped-columns">
-<a href='/useradmin/tambahuser'><button type="button" class="btn btn-success" >tambah</button></a>
+<a href='/useradmin/tambahuser'><button type="button" class="btn btn-success" >Add New</button></a>
   <thead>
     <tr>
       <th scope="col">ID</th>

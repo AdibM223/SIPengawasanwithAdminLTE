@@ -47,16 +47,21 @@
     <input type="text" class="form-control" name='notelp_pimpinan' >
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput1">PIC</label>
+    <label for="exampleFormControlInput1">Penanggung Jawab</label>
     <input type="text" class="form-control"  name='PIC'>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Nomor Kontak PIC</label>
+    <label for="exampleFormControlInput1">Nomor Kontak Penanggung Jawab</label>
     <input type="text" class="form-control" name='notelp_PIC' >
   </div>  
   <div class="form-group">
-    <label for="exampleFormControlInput1">Nama RO</label>
-    <input type="text" class="form-control" name='nama_RO_bu' >
+    <label for="exampleFormControlInput1">Nama <i>Relationship Officer</i> (RO)</label>
+    <select name="namapeg" class="form-control">
+      @foreach ($datapegku as $p)
+      <option value="{{$p->namapeg}}">{{$p->nip}} - {{$p->namapeg}}</option>
+      @endforeach
+    </select>
+    
   </div>  
   <div class="form-group">  <div class="form-group">
     <label for="exampleFormControlInput1">Titik Lokasi Badan Usaha</label>

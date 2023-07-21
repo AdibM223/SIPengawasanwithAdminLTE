@@ -26,7 +26,7 @@
         <td>{{ $r->nomorregis }}</td>
 			<td>{{ $r->nama_bu_regis }}</td>
 			<td>{{ $r->tgl_suratpernyataan }}</td>
-			<td>{{ $r->dokumen_pendukung }}</td>
+      <td><a href="{{asset('public/regis/files/'.$r->dokumen_pendukung) }}" target='_blank'>Akses Dokumen Pendukung</a></td>
             <td>{{ $r->status_tahap1 }}</td>
 
 		</tr>
